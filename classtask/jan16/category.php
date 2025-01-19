@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +7,16 @@
 </head>
 <body>
 <?php
+
 $cnn=mysqli_connect("localhost","root","","DBTATA");
-$qry="select * from emp";
+$qry="select * from catagory";
 $result=$cnn->query($qry);
 while($row=$result->fetch_assoc())
 {
-$eno=$row["eno"];
-$ename=$row["ename"];
-echo "<br>$eno --- $ename";
+$catid=$row["catid"];
+$catname=$row["catname"];
+
+echo "<br>$catid $catname";
 }
 
 ?>

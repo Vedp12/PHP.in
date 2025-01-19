@@ -17,7 +17,7 @@ $sno=$row["sno"];
 $sname=$row["sname"];
 $gender=$row["gender"];
 $sem=$row["sem"];
-echo "<br>$sno  --- $sname --- $gender --- $sem";
+echo "<br>$sname --- $gender --- $sem";
 }
 
 ?>

@@ -11,7 +11,7 @@
 $a=$_POST["txtno1"];
 $b=$_POST["txtno2"];
 $c=$a+$b;
-echo "Total = $c";
+            echo "Total = $c";
 ?>  
 </body>
 </html>
