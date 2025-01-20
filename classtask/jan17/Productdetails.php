@@ -3,24 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product category</title>
 </head>
 <body>
 <?php
-
+$id=$_GET["id"];
 $cnn = mysqli_connect("localhost", "root", "", "DBTATA");
-$qry = "SELECT * FROM `product`";
+$qry = "SELECT * FROM product where pid='$id'";
 $result = $cnn->query($qry);
-
-
-echo "<table border='1' cellspacing='0' cellpadding='10'>";
-echo "<tr>
-        <th>Product ID</th>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Image</th>
-      </tr>";
-
 
 while ($row = $result->fetch_assoc()) {
     $pid = $row["pid"];
@@ -28,11 +18,15 @@ while ($row = $result->fetch_assoc()) {
     $price = $row["pprice"];
     $pimg = $row["pimg"]; 
     $catid = $row["catid"];
+    $img = "<img src='Product_img//$pname.jpg' height='200' width='200' />";
+    echo "<table border='1' cellspacing='0' cellpadding='10'>";
+    echo "<tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Image</th>
+          </tr>";
 
-    
-    $img = "<img src='Product_img/$pname.jpg' height='100' width='100' />";
-
-    
     echo "<tr>
             <td>$pid</td>
             <td>$pname</td>
